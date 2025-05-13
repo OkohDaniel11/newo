@@ -1,0 +1,60 @@
+<!--
+File: index.html
+Created: May 13, 2025
+
+What was done:
+- This file demonstrates a simple use of GreenSock Animation Platform (GSAP) for animating a box.
+- HTML, CSS, and JS are all included in this file for clarity.
+- Notes are provided throughout to explain each section and what it does.
+
+What the content does:
+- Displays a centered box with the text "GSAP Box".
+- When the page loads, the box animates in using GSAP (scales up and fades in).
+- A button below the box triggers a GSAP animation that moves and rotates the box.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation Demo</title>
+    <!-- GreenSock Animation Platform CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- GTA VI-style Loader -->
+    <div class="gta6-loader" id="gta6Loader">
+      <div class="gta6-vi">D</div>
+      <div class="gta6-loading-bar">
+        <div class="gta6-bar"></div>
+      </div>
+    </div>
+
+    <!-- Main heading -->
+    <div>
+        <header>
+            <!--LOGO-->
+            <div class="logo borderExpand">
+                <span class="cap shadowGlow">
+                    d<span class="inn slideinText">an</span>
+                </span>
+                <span class="cap shadowGlow">
+                    c<span class="inn slideinText">ode</span>
+                </span>
+            </div>
+            <div></div>
+            <!--NAV-->
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">PORTFOLIO</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
