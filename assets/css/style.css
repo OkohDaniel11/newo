@@ -1,0 +1,217 @@
+/*
+File: style.css
+Last updated: May 13, 2025
+
+Notes on this file:
+- This stylesheet provides layout and styling for a header, logo, and navigation bar.
+- Comments are included before each section to explain what the styles do.
+*/
+
+/* Import Iceberg font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
+
+/* ====== Body Styles Start ====== */
+/* Reset default body padding and margin */
+body {
+    padding: 0;
+    margin: 0;
+}
+/* ====== Body Styles End ====== */
+
+/* ====== Header Styles Start ====== */
+/* Header layout: flex container, full width, auto height, centered content with gap */
+header {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    gap: 5%;
+}
+/* ====== Header Styles End ====== */
+
+/* ====== Keyframes Start ====== */
+@keyframes slideinText {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes borderExpand {
+    0% {
+        border: 0px solid #000;
+        opacity: 0;
+    }
+    100% {
+        border: 1px solid #000;
+        opacity: 1;
+    }
+}
+
+/* Shadow glow animation for text or elements */
+@keyframes shadowGlow {
+    0% {
+        text-shadow: 0 0 8px #b3b3b3, 0 0 16px #e0e0e0;
+    }
+    100% {
+        text-shadow: 0 0 24px #43e97b, 0 0 48px #38f9d7;
+    }
+}
+
+.borderExpand {
+    animation: borderExpand 1s ease-in-out forwards;
+}
+
+.slideinText {
+    animation: slideinText 2s ease-in;
+}
+
+.shadowGlow {
+    animation: shadowGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes gtaBarAnim {
+    0%, 100% {
+        transform: scaleY(0.5);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1.2);
+        opacity: 1;
+    }
+}
+/* ====== Keyframes End ====== */
+
+/* ====== Logo Styles Start ====== */
+/* Logo positioning: absolutely placed near top-left */
+.logo {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: 'Iceberg', Arial, sans-serif;
+}
+
+/* Logo text: capitalize first letter, set font size */
+.logo .cap {
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+/* Logo inner text: set font size */
+.logo .inn {
+    font-size: 20px;
+}
+
+/* ====== Logo Styles End ====== */
+
+/* ====== Navigation Styles Start ====== */
+/* Navigation bar: relatively positioned, shifted right */
+nav {
+    position: relative;
+    left: 10%;
+}
+
+/* Navigation list: flex layout, centered, with gap between items */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Navigation list items: remove bullets, add padding */
+nav ul li {
+    list-style: none;
+    padding: 10px;
+}
+
+/* Navigation links: remove underline, set color and font size */
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    padding: 0 10px; /* Add padding for better click area */
+}
+
+/* Adding before and after lines */
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    left: 0;
+    bottom: 1%;
+    height: 3px;
+    width: 0;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/*==== Navigation Styles End ====== */
+
+/* ====== Loader Styles Start ====== */
+.gta6-loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.gta6-vi {
+  font-family: 'Iceberg', Arial, sans-serif;
+  font-size: 8rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffb347 0%, #ffcc33 50%, #ff5e62 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px #ffb347, 0 0 80px #ff5e62;
+  animation: gta6Glow 1.5s infinite alternate;
+  letter-spacing: 0.2em;
+}
+@keyframes gta6Glow {
+  0% {
+    text-shadow: 0 0 20px #ffb347, 0 0 40px #ff5e62;
+  }
+  100% {
+    text-shadow: 0 0 60px #ffb347, 0 0 120px #ff5e62;
+  }
+}
+.gta6-loading-bar {
+  width: 120px;
+  height: 8px;
+  background: #222;
+  border-radius: 4px;
+  margin-top: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 12px #ffb347;
+}
+.gta6-bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ffb347, #ff5e62);
+  animation: gta6BarMove 2s infinite;
+  border-radius: 4px;
+}
+@keyframes gta6BarMove {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+/* ====== Loader Styles End ====== */
+
+
